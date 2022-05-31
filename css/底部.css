@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*底部*/
+footer {
+    width: 100%;
+    height: 337px;
+    background-color: #2F3130;
+}
+
+footer h1,
+p {
+    color: #939494;
+}
+
+footer p {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+footer>div:nth-of-type(1) {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #3e403f;
+    line-height: 80px;
+    text-indent: 2em;
+}
+
+footer>img {
+    margin: 33px 113px;
+}
+
+footer>div:nth-of-type(2) {
+    width: 100%;
+    height: 67px;
+    position: relative;
+    top: -85px;
+    left: -117px;
+
+}
+
+footer>div:nth-of-type(3) {
+    width: 100%;
+    height: 67px;
+    position: relative;
+    top: -153px;
+    left: 162px;
+
+}
+
+footer>div:nth-of-type(4) {
+    width: 100%;
+    height: 100px;
+    margin: -103px 0px;
+}
+
+.p_ {
+    margin-top: 10px;
+}
