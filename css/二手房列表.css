@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.input_ {
+    width: 90%;
+    height: 5.2rem;
+    border: 1px solid gainsboro;
+    margin: 33px;
+    background-color: white;
+}
+
+.input_>input {
+    width: 82%;
+    height: 2.2rem;
+    font-size: 1.6rem;
+    text-indent: 1em;
+    border: none;
+    outline: none;
+    border-right: 3px solid black;
+    margin-top: 22px;
+
+}
+
+.input_>img {
+    position: relative;
+    bottom: -8px;
+    right: -34px;
+}
+
+
+
+.list {
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.list>li a {
+    font-size: 2.5rem;
+    color: #666666;
+    margin-left: 76px;
+    font-weight: bold;
+
+}
+
+.list>li a span {
+    border-top: 5px solid #ccc;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 20px;
+}
