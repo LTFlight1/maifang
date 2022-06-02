@@ -1,72 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/头部.css">
-    <link rel="stylesheet" href="../css/我的登录页面.css">
-    <script src=""></script>
 </head>
+<link rel="stylesheet" href="../css/我的登录页面.css">
 
 <body>
+    <!-- 头部 -->
     <header>
-        <a href="#"><img src="../image/首页/logo.jpg" alt="" /></a>
-        <a href="../html/登录.html"><img src="../image/首页/my.jpg" alt="" /></a>
-        <a href="#"><img src="../image/首页/xiazai.jpg" alt="" /></a>
+        <h1>
+            <a href=""><img src="../image/首页/logo.jpg" alt="" width="200px" height="50px"></a>
+        </h1>
+        <div class="conter">
+            <a href=""><img src="../image/首页/my.jpg" alt=""></a>
+            <a href=""><img src="../image/首页/xiazai.jpg" alt=""></a>
+        </div>
     </header>
-    <div class="box">
-        <p> <a href="">首页</a>> <a href="">我的</a>><a href="">登录</a></p>
+    <div class="nav">
+        <p><span>首页</span> > 我的 > 登录</p>
     </div>
-    <div class="book">
-        <ul class="book-ul">
-            <li class="li1">普通登录</li>
-            <li class="li2">验证码快捷登录</a> </li>
-        </ul>
-        <div class="text">
-            <input type="text" placeholder="请输入手机号"><i class="user"></i>
-            <input type="text" placeholder="请输入密码"><i class="pasd"></i>
-
-            <button>立即登录</button>
-        </div>
-        <ul class="tt">
-            <li class="orange"><a href="../html/注册.html">立即注册</a> </li>
-            <li><a href="../html/找回密码.html">忘记密码</a> </li>
-        </ul>
-
+    <!-- 登录 -->
+    <div class="dl">
+        <div class="left">普通登录</div>
+        <div class="right">验证码快捷登录</div>
     </div>
-    <main class="yzdl">
-        <div class="tex">
-            <input type="text" placeholder="请输入手机号"><i class="user"></i>
-            <input type="text" placeholder="请输入短信中的验证码"><i class="yzm"></i>
-
-            <button>立即登录</button>
+    <ul>
+        <li><input type="text" name="" id="ipone" placeholder="请输入手机号码"></li>
+        <li><input type="password" name="" id="pasd" placeholder="请输入密码"></li>
+        <li><input type="submit" value="立即登录" class="longe" class="que"></li>
+        <div class="foots">
+            <a href="../注册页.html">立即注册</a> <a href="../找回密码.html">忘记密码</a>
         </div>
-        <p class="yzm">发送验证码</p>
-
-    </main>
-
+    </ul>
+    <!-- 验证码登录 -->
+    <ul id="top">
+        <li><input type="text" name="" id="sjh" placeholder="请输入手机号码"></li>
+        <li><input type="text" name="" id="yzma" placeholder="请输入短信中的验证码"></li>
+        <div class="yzm" onclick="yz()">发送验证码</div>
+    </ul>
 </body>
 
 </html>
 <script>
-    var text_ = document.getElementsByClassName('text')[0];
-    var yzdl = document.getElementsByClassName('yzdl')[0];
-    var li_1 = document.getElementsByClassName('li1')[0];
-    var li_2 = document.getElementsByClassName('li2')[0];
-    li_1.onclick = function () {
-        yzdl.style.display = 'none';
-        text_.style.display = 'block'
-        li_1.style.borderBottom = '0.2rem solid #FF8A00';
-        li_2.style.borderBottom = '0.2rem solid #C7C7C7';
+    //获取随机验证码
+    var yzm = document.getElementsByClassName('yzm')[0];
+    var itme = 60;
+    var time;
+    var sj = Math.floor(Math.random() * 9000 + 1000);
+    console.log(sj);
+    function yz() {
+        clearInterval(time);;
+        time = setInterval(function () {
+            itme--;
+            yzm.innerHTML = "(" + itme + ")秒 重发";
+            if (itme == 56) {
+                alert(sj);
+
+            } else if (itme < 0) {
+                clearInterval(time);
+                yzm.innerHTML = "发送验证码";
+            }
+        }, 1000)
     }
-    li_2.onclick = function () {
-        yzdl.style.display = 'block';
-        text_.style.display = 'none'
-        li_1.style.borderBottom = '1px solid #C7C7C7';
-        li_2.style.borderBottom = '0.2rem solid #FF8A00';
+    var right_ = document.getElementsByClassName('right')[0];
+    var left_ = document.getElementsByClassName('left')[0];
+    var top_ = document.getElementById('top');
+    right_.onclick = function () {
+        top_.style.display = "block";
+        right_.className = "bor";
+        left_.style.borderBottom = "none";
+    }
+    left_.onclick = function () {
+        top_.style.display = "none";
+        right_.className = 'ko';
+        left_.style.borderBottom = "4px solid #FF8A00"
+    }
+    //登录验证
+    var longe = document.getElementsByClassName('longe')[0];//获取立即登录
+    //获取手机号  密码
+    var phone = localStorage.getItem('手机号');
+    var password = localStorage.getItem('password');
+    longe.onclick = function () {//给立即登录绑定点击事件
+        //普通登陆验证
+        var ipone = document.getElementById('ipone').value;
+        var pasd = document.getElementById('pasd').value;
+        if (ipone == phone && pasd == password) {
+            alert('登录成功');
+            location.href = "./我的.html";
+        } else if (ipone !== phone) {
+            alert("登陆失败,手机号或密码错误或没有注册");
+        }
+        var sjh = document.getElementById('sjh').value;
+        var yzma = document.getElementById('yzma').value;
+        if (sjh == phone && yzma == sj) {
+            alert('登录成功');
+            location.href = "../html/我的页面.html";
+        }
     }
 
 </script>

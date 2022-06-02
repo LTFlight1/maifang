@@ -1,8 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.box{
+
+a {
+    text-decoration: none;
+}
+
+.box {
     font-size: 1rem;
     height: 3rem;
     line-height: 3rem;
@@ -10,39 +15,46 @@
     background-color: white;
 
 }
-.box>p{
+
+.box>p {
     margin-left: 1rem;
 }
-.box>p>a{
-   
+
+.box>p>a {
+
     color: black;
     text-decoration: none;
 }
-.box>p>a:nth-of-type(1){
+
+.box>p>a:nth-of-type(1) {
     font-size: 1.1rem;
     font-weight: 700;
 }
-.bg{
+
+.bg {
     width: 100%;
     height: 20rem;
-    background:url(../image/我的_租房/bg1.png);
+    background: url(../image/我的_租房/bg1.png);
     text-align: center;
     line-height: 20rem;
 }
-.bg>img{
+
+.bg>img {
     width: 15%;
     height: 6rem;
     position: absolute;
     top: 12rem;
     left: 18rem;
 }
-.wd{
+
+.wd {
     width: 100%;
     height: 10rem;
     list-style: none;
-  
+
 }
-.wd>li{
+
+.wd>li {
     width: 90%;
     height: 3rem;
     line-height: 3rem;
@@ -50,20 +62,22 @@
     font-size: 1.2rem;
     margin: 0 auto;
     border-bottom: 1px solid #C7C7C7;
-    background:url(../image/我的_租房/right.png) no-repeat 35rem 1rem;
+    background: url(../image/我的_租房/right.png) no-repeat 35rem 1rem;
 }
-.wd>li>a{
+
+.wd>li>a {
     text-decoration: none;
-    margin: 0  1rem;
+    margin: 0 1rem;
     color: #7B99CA;
 }
-.btn{
+
+.btn {
     width: 60%;
     height: 3rem;
     font-size: 1.5rem;
     color: #FF8700;
-   margin-left: 8rem;
-   background-color: #9F9F9F;
-   border: none;
-   outline: none;
+    margin-left: 8rem;
+    background-color: #9F9F9F;
+    border: none;
+    outline: none;
 }
