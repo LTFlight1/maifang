@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/头部.css">
+    <link rel="stylesheet" href="../css/我的登录页面.css">
+    <script src=""></script>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="../image/首页/logo.jpg" alt="" /></a>
+        <a href="#"><img src="../image/首页/my.jpg" alt="" /></a>
+        <a href="#"><img src="../image/首页/xiazai.jpg" alt="" /></a>
+    </header>
+    <div class="box">
+        <p> <a href="">首页</a>> <a href="">我的</a>><a href="">登录</a></p>
+    </div>
+    <div class="book">
+        <ul class="book-ul">
+            <li class="li1">普通登录</li>
+            <li class="li2">验证码快捷登录</a> </li>
+        </ul>
+        <div class="text">
+            <input type="text" placeholder="请输入手机号"><i class="user"></i>
+            <input type="text" placeholder="请输入密码"><i class="pasd"></i>
+
+            <button>立即登录</button>
+        </div>
+        <ul class="tt">
+            <li class="orange"><a href="../html/注册.html">立即注册</a> </li>
+            <li><a href="../html/找回密码.html">忘记密码</a> </li>
+        </ul>
+
+    </div>
+    <main class="yzdl">
+        <div class="tex">
+            <input type="text" placeholder="请输入手机号"><i class="user"></i>
+            <input type="text" placeholder="请输入短信中的验证码"><i class="yzm"></i>
+
+            <button>立即登录</button>
+        </div>
+        <p class="yzm">发送验证码</p>
+
+    </main>
+
+</body>
+
+</html>
+<script>
+    var text_ = document.getElementsByClassName('text')[0];
+    var yzdl = document.getElementsByClassName('yzdl')[0];
+    var li_1 = document.getElementsByClassName('li1')[0];
+    var li_2 = document.getElementsByClassName('li2')[0];
+    li_1.onclick = function () {
+        yzdl.style.display = 'none';
+        text_.style.display = 'block'
+        li_1.style.borderBottom = '0.2rem solid #FF8A00';
+        li_2.style.borderBottom = '0.2rem solid #C7C7C7';
+    }
+    li_2.onclick = function () {
+        yzdl.style.display = 'block';
+        text_.style.display = 'none'
+        li_1.style.borderBottom = '1px solid #C7C7C7';
+        li_2.style.borderBottom = '0.2rem solid #FF8A00';
+    }
+
+</script>
